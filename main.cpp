@@ -46,9 +46,9 @@ public:
         return Vector3D(this->getX()-v3.getX(),
                         this->getY()-v3.getY(), this->getZ()-v3.getZ());
     }
-    const Vector3D operator*(Vector3D& v3) const {
-        return Vector3D(this->getX()*v3.getX(),
-                        this->getY()*v3.getY(), this->getZ()*v3.getZ());
+    const double operator*(Vector3D& v3) const {
+        return this->getX()*v3.getX() +
+                        this->getY()*v3.getY() + this->getZ()*v3.getZ();
     }
 };
     const Vector3D operator*(double c, Vector3D& v3){
@@ -115,7 +115,7 @@ public:
             for(int i = 0; i<3; i++){
                 for(int j = 0; j<3; j++){
                     elem = 0;
-                    for(int count = 0; count<2; count++){
+                    for(int count = 0; count<3; count++){
                         elem+=this->matrix[i][count]*m.matrix[count][j];
                     }
                     r.setElem(i, j, elem);
