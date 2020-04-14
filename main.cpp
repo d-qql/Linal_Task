@@ -84,7 +84,7 @@ public:
         Matrix3D(): Matrix3D(0, 0, 0, 0, 0, 0, 0, 0, 0){};
         ~Matrix3D(){
             for(int i = 0; i<3; i++){
-                delete this->matrix[i];
+                delete[] this->matrix[i];
             }
             delete[] this->matrix;
         };
