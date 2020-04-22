@@ -3,4 +3,4 @@ project(LinalIteration)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(LinalIteration main.cpp)
+add_executable(LinalIteration main.cpp Matrix.cpp Matrix.h Vector.cpp Vector.h)
