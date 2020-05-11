@@ -36,17 +36,17 @@ using namespace std;
                         this->getElem(1, 0)*c, this->getElem(1, 1)*c, this->getElem(1, 2)*c,
                         this->getElem(2, 0)*c, this->getElem(2, 1)*c, this->getElem(2, 2)*c);
     }
-    const Matrix3D Matrix3D::operator+(Matrix3D &m) const{
+    const Matrix3D Matrix3D::operator+(const Matrix3D &m) const{
         return Matrix3D(this->getElem(0, 0)+m.getElem(0, 0), this->getElem(0, 1)+m.getElem(0, 1), this->getElem(0, 2)+m.getElem(0, 2),
                         this->getElem(1, 0)+m.getElem(1, 0), this->getElem(1, 1)+m.getElem(1, 1), this->getElem(1, 2)+m.getElem(1, 2),
                         this->getElem(2, 0)+m.getElem(2, 0), this->getElem(2, 1)+m.getElem(2, 1), this->getElem(2, 2)+m.getElem(2, 2));
     }
-    const Matrix3D Matrix3D::operator-(Matrix3D &m) const{
+    const Matrix3D Matrix3D::operator-(const Matrix3D &m) const{
         return Matrix3D(this->getElem(0, 0)-m.getElem(0, 0), this->getElem(0, 1)-m.getElem(0, 1), this->getElem(0, 2)-m.getElem(0, 2),
                         this->getElem(1, 0)-m.getElem(1, 0), this->getElem(1, 1)-m.getElem(1, 1), this->getElem(1, 2)-m.getElem(1, 2),
                         this->getElem(2, 0)-m.getElem(2, 0), this->getElem(2, 1)-m.getElem(2, 1), this->getElem(2, 2)-m.getElem(2, 2));
     }
-    const Matrix3D Matrix3D::operator*(Matrix3D &m) const{
+    const Matrix3D Matrix3D::operator*(const Matrix3D &m) const{
         Matrix3D r = Matrix3D();
         double elem=0;
         for(int i = 0; i<3; i++){
@@ -68,7 +68,7 @@ using namespace std;
         return d;
     }
 
-const Matrix3D operator*(double c, Matrix3D &m) {
+const Matrix3D operator*(double c, const Matrix3D &m) {
     return Matrix3D(m.getElem(0, 0)*c, m.getElem(0, 1)*c, m.getElem(0, 2)*c,
                     m.getElem(1, 0)*c, m.getElem(1, 1)*c, m.getElem(1, 2)*c,
                     m.getElem(2, 0)*c, m.getElem(2, 1)*c, m.getElem(2, 2)*c);

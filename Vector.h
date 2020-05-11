@@ -23,13 +23,13 @@ public:
     void setY(double y);
     void setZ(double z);
     const Vector3D operator*(double c) const;
-    const Vector3D operator+(Vector3D& v3) const;
-    const Vector3D operator-(Vector3D& v3) const;
-    const double operator*(Vector3D& v3) const;
+    const Vector3D operator+(const Vector3D& v3) const;
+    const Vector3D operator-(const Vector3D& v3) const;
+    const double operator*(const Vector3D& v3) const;
 };
-const Vector3D operator*(double c, Vector3D& v3);
-istream& operator>>(istream &is, Vector3D &v3);
+const Vector3D operator*(double c, const Vector3D& v3);
+istream& operator>>(istream &is,  Vector3D &v3);
 ostream& operator<<(ostream &os, const Vector3D &v3);
-const Vector3D operator*(Matrix3D &m, Vector3D &v);
+const Vector3D operator*(const Matrix3D &m, const Vector3D &v);
 
 #endif //LINALITERATION_VECTOR_H

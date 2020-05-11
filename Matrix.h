@@ -25,15 +25,15 @@ public:
 
     const Matrix3D operator*(double c) const;
 
-    const Matrix3D operator+(Matrix3D &m) const;
+    const Matrix3D operator+(const Matrix3D &m) const;
 
-    const Matrix3D operator-(Matrix3D &m) const;
+    const Matrix3D operator-(const Matrix3D &m) const;
 
-    const Matrix3D operator*(Matrix3D &m) const;
+    const Matrix3D operator*(const Matrix3D &m) const;
 
     double det();
 };
-const Matrix3D operator*(double c, Matrix3D &m);
+const Matrix3D operator*(double c, const Matrix3D &m);
 ostream& operator<<(ostream &os, const Matrix3D &m);
 istream& operator>>(istream &is, Matrix3D &m);
 
